@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Vieni – spontan treffen</title>
+  <meta name="description" content="Vieni: Triff jemanden, der gerade Zeit hat. In wenigen Minuten, an einem öffentlichen Ort. Für Studierende in Weimar.">
+  <meta name="theme-color" content="#FFD23F">
+  <meta property="og:title" content="Vieni – spontan treffen">
+  <meta property="og:description" content="Triff jemanden, der gerade Zeit hat. In wenigen Minuten, an einem öffentlichen Ort.">
+  <link rel="icon" href="favicon.png">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="config.js"></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="top">
+        <a class="brand" href="./"><img src="icon.svg" alt="" width="40" height="40">Vieni</a>
+        <div class="langs" role="group" aria-label="Sprache / Language">
+          <button type="button" data-lang="de">DE</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+      </div>
+
+      <h1 data-t="h1">Wer hat <em>gerade</em> Zeit?</h1>
+      <p class="lead" data-t="lead">Vieni bringt dich mit Studierenden in deiner Nähe zusammen, die genau jetzt Lust auf Kaffee, Lernen oder einen Spaziergang haben. Treffpunkt ist immer ein öffentlicher Ort.</p>
+
+      <div class="downloads" id="downloads">
+        <a class="btn btn-primary" id="btn-android" href="#">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.6 9.5l1.8-3.1a.4.4 0 00-.7-.4l-1.8 3.1a11 11 0 00-9.8 0L5.3 6a.4.4 0 10-.7.4l1.8 3.1A10.4 10.4 0 001 17.8h22a10.4 10.4 0 00-5.4-8.3zM7 15.2a1 1 0 110-2 1 1 0 010 2zm10 0a1 1 0 110-2 1 1 0 010 2z"/></svg>
+          <span><span data-t="android">Für Android laden</span><small data-t="androidSub">kostenlos · direkt als App-Datei</small></span>
+        </a>
+        <a class="btn btn-dark" id="btn-ios" href="#warteliste">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9a4.8 4.8 0 00-3.8-2c-1.6-.2-3.1.9-3.9.9s-2-.9-3.4-.9a5 5 0 00-4.2 2.6c-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6s1.8-.8 3.3-.8 2 .8 3.4.8 2.3-1.3 3.1-2.5a11 11 0 001.4-2.9 4.5 4.5 0 01-2.6-4.1zM13.9 5a4.4 4.4 0 001-3.2 4.6 4.6 0 00-3 1.5 4.2 4.2 0 00-1 3.1A3.8 3.8 0 0013.9 5z"/></svg>
+          <span><span data-t="ios">iPhone: bald im App Store</span><small data-t="iosSub">trag dich ein, wir sagen Bescheid</small></span>
+        </a>
+      </div>
+      <p class="note" data-t="area">Gerade gestartet in Weimar. Ab 18 Jahren.</p>
+
+      <svg class="hero-art" viewBox="200 160 624 700" aria-hidden="true">
+        <path d="M250 300 C 260 520, 420 620, 512 700" stroke="#14183A" stroke-width="44" stroke-linecap="round" stroke-dasharray="2 86" fill="none"/>
+        <path d="M774 300 C 764 520, 604 620, 512 700" stroke="#14183A" stroke-width="44" stroke-linecap="round" stroke-dasharray="2 86" fill="none"/>
+        <circle cx="250" cy="270" r="86" fill="#14183A"/><circle cx="774" cy="270" r="86" fill="#14183A"/>
+        <circle cx="512" cy="712" r="132" fill="#2B4BFF"/><circle cx="512" cy="712" r="50" fill="#FFD23F"/>
+      </svg>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2 data-t="howTitle">So funktioniert's</h2>
+      <ol class="steps">
+        <li><h3 data-t="s1t">Sag, worauf du Lust hast</h3><p data-t="s1p">Kaffee, Mittagessen, Lernen, Sport … und wie viel Zeit du hast.</p></li>
+        <li><h3 data-t="s2t">Sieh, wer in der Nähe ist</h3><p data-t="s2p">Nur Vorname, Foto und ungefähre Entfernung. Dein genauer Standort bleibt geheim.</p></li>
+        <li><h3 data-t="s3t">Hi sagen, treffen</h3><p data-t="s3p">Sagt ihr beide Hi, schlägt Vieni einen öffentlichen Treffpunkt vor. In 15 Minuten seid ihr da.</p></li>
+      </ol>
+    </section>
+
+    <section>
+      <h2 data-t="safeTitle">Sicher und fair</h2>
+      <div class="cards">
+        <div class="card"><span class="emoji">📍</span><h3 data-t="c1t">Nur öffentliche Orte</h3><p data-t="c1p">Plätze, Cafés, die Mensa. Nie bei jemandem zu Hause.</p></div>
+        <div class="card"><span class="emoji">📱</span><h3 data-t="c2t">Echte Handynummer</h3><p data-t="c2p">Jedes Konto ist per SMS bestätigt. Keine anonymen Fakes.</p></div>
+        <div class="card"><span class="emoji">🛡️</span><h3 data-t="c3t">Melden und blockieren</h3><p data-t="c3p">Mit einem Tipp. Wer gegen die Regeln verstößt, fliegt raus.</p></div>
+        <div class="card"><span class="emoji">🔒</span><h3 data-t="c4t">Standort nur kurz</h3><p data-t="c4p">Nur solange dein Gesuch läuft, auf ca. 100 m gerundet, danach gelöscht.</p></div>
+      </div>
+    </section>
+
+    <section id="android-hilfe">
+      <h2 data-t="helpTitle">Android: so installierst du Vieni</h2>
+      <details>
+        <summary data-t="helpSummary">Schritt für Schritt (2 Minuten)</summary>
+        <ol>
+          <li data-t="h1s">Tippe oben auf „Für Android laden“. Die Datei vieni.apk wird heruntergeladen.</li>
+          <li data-t="h2s">Öffne die Datei (in der Benachrichtigung oder unter „Downloads“).</li>
+          <li data-t="h3s">Fragt dein Handy, ob du Apps aus dieser Quelle erlauben willst: „Einstellungen“ → „Diese Quelle zulassen“ einschalten → zurück.</li>
+          <li data-t="h4s">Tippe auf „Installieren“. Erscheint eine Play-Protect-Warnung: „Trotzdem installieren“. Vieni ist einfach noch nicht im Play Store.</li>
+          <li data-t="h5s">Fertig. Öffne Vieni und melde dich mit deiner Handynummer an.</li>
+        </ol>
+      </details>
+    </section>
+
+    <section id="warteliste">
+      <div class="waitlist">
+        <h2 data-t="wlTitle">iPhone? Wir sagen dir Bescheid.</h2>
+        <p data-t="wlText">Vieni kommt bald in den App Store. Trag deine E-Mail ein, dann schreiben wir dir einmal, sobald es losgeht. Sonst nichts.</p>
+        <form id="wl-form" novalidate>
+          <label class="sr-only" for="wl-email" data-t="wlLabel">E-Mail-Adresse</label>
+          <input id="wl-email" type="email" autocomplete="email" inputmode="email" required placeholder="name@uni-weimar.de">
+          <label class="consent"><input id="wl-consent" type="checkbox" required>
+            <span data-t-html="wlConsent">Ich bin einverstanden, dass Vieni meine E-Mail speichert, um mich einmal über den Start zu informieren. Abmelden jederzeit per Mail. <a href="datenschutz.html#warteliste">Datenschutz</a></span></label>
+          <button class="btn btn-primary" type="submit" data-t="wlButton">Eintragen</button>
+          <p class="msg" id="wl-msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <nav>
+      <a href="nutzungsbedingungen.html" data-t="fTerms">Nutzungsbedingungen</a>
+      <a href="datenschutz.html" data-t="fPrivacy">Datenschutz</a>
+      <a href="impressum.html" data-t="fImprint">Impressum</a>
+    </nav>
+    <span data-t="fMade">Gemacht in Weimar.</span>
+  </footer>
+
+  <script>
+  (function () {
+    var T = {
+      en: {
+        h1: 'Who’s free <em>right now</em>?',
+        lead: 'Vieni connects you with students nearby who feel like grabbing a coffee, studying or going for a walk right now. You always meet at a public place.',
+        android: 'Get it for Android', androidSub: 'free · direct app download',
+        ios: 'iPhone: coming soon to the App Store', iosSub: 'sign up and we’ll let you know',
+        area: 'Just launched in Weimar. 18+ only.',
+        howTitle: 'How it works',
+        s1t: 'Say what you feel like', s1p: 'Coffee, lunch, studying, sports … and how much time you have.',
+        s2t: 'See who’s nearby', s2p: 'Only first name, photo and rough distance. Your exact location stays private.',
+        s3t: 'Say hi, meet up', s3p: 'If you both say hi, Vieni suggests a public meeting point. You’re there within 15 minutes.',
+        safeTitle: 'Safe and fair',
+        c1t: 'Public places only', c1p: 'Squares, cafés, the dining hall. Never at someone’s home.',
+        c2t: 'Real phone number', c2p: 'Every account is verified by text message. No anonymous fakes.',
+        c3t: 'Report and block', c3p: 'With one tap. Anyone who breaks the rules is out.',
+        c4t: 'Location only briefly', c4p: 'Only while your request is active, rounded to about 100 m, then deleted.',
+        helpTitle: 'Android: how to install Vieni', helpSummary: 'Step by step (2 minutes)',
+        h1s: 'Tap “Get it for Android” above. The file vieni.apk will download.',
+        h2s: 'Open the file (from the notification or in “Downloads”).',
+        h3s: 'If your phone asks whether to allow apps from this source: “Settings” → turn on “Allow from this source” → go back.',
+        h4s: 'Tap “Install”. If you see a Play Protect warning, tap “Install anyway”. Vieni simply isn’t in the Play Store yet.',
+        h5s: 'Done. Open Vieni and sign in with your phone number.',
+        wlTitle: 'iPhone? We’ll let you know.', wlText: 'Vieni is coming to the App Store soon. Enter your email and we’ll write to you once when it launches. Nothing else.',
+        wlLabel: 'Email address',
+        wlConsent: 'I agree that Vieni stores my email to tell me once about the launch. Unsubscribe any time by email. <a href="datenschutz.html#warteliste">Privacy</a>',
+        wlButton: 'Sign up', fTerms: 'Terms of use', fPrivacy: 'Privacy', fImprint: 'Legal notice', fMade: 'Made in Weimar.',
+        ok: 'Done! We’ll let you know.', errEmail: 'Please enter a valid email address.', errConsent: 'Please tick the box to agree.',
+        errNet: 'That didn’t work. Please try again later.', storeIos: 'Download on the App Store', storeAndroid: 'Get it on Google Play'
+      },
+      es: {
+        h1: '¿Quién tiene tiempo <em>ahora</em>?',
+        lead: 'Vieni te conecta con estudiantes cerca de ti que ahora mismo tienen ganas de un café, estudiar o dar un paseo. Siempre os encontráis en un lugar público.',
+        android: 'Descargar para Android', androidSub: 'gratis · descarga directa',
+        ios: 'iPhone: pronto en el App Store', iosSub: 'apúntate y te avisamos',
+        area: 'Recién lanzado en Weimar. Solo mayores de 18.',
+        howTitle: 'Cómo funciona',
+        s1t: 'Di qué te apetece', s1p: 'Café, comida, estudiar, deporte … y cuánto tiempo tienes.',
+        s2t: 'Mira quién está cerca', s2p: 'Solo nombre, foto y distancia aproximada. Tu ubicación exacta es privada.',
+        s3t: 'Saluda y quedad', s3p: 'Si los dos decís hola, Vieni propone un punto de encuentro público. En 15 minutos estáis allí.',
+        safeTitle: 'Seguro y justo',
+        c1t: 'Solo lugares públicos', c1p: 'Plazas, cafés, el comedor. Nunca en casa de nadie.',
+        c2t: 'Número de móvil real', c2p: 'Cada cuenta se verifica por SMS. Sin perfiles falsos anónimos.',
+        c3t: 'Reportar y bloquear', c3p: 'Con un toque. Quien rompe las reglas, queda fuera.',
+        c4t: 'Ubicación solo un rato', c4p: 'Solo mientras tu búsqueda está activa, redondeada a unos 100 m, y luego se borra.',
+        helpTitle: 'Android: cómo instalar Vieni', helpSummary: 'Paso a paso (2 minutos)',
+        h1s: 'Toca arriba «Descargar para Android». Se descargará el archivo vieni.apk.',
+        h2s: 'Abre el archivo (desde la notificación o en «Descargas»).',
+        h3s: 'Si tu móvil pregunta si permites apps de esta fuente: «Ajustes» → activa «Permitir de esta fuente» → vuelve.',
+        h4s: 'Toca «Instalar». Si aparece un aviso de Play Protect, toca «Instalar de todos modos». Vieni aún no está en Play Store.',
+        h5s: 'Listo. Abre Vieni e inicia sesión con tu número de móvil.',
+        wlTitle: '¿iPhone? Te avisamos.', wlText: 'Vieni llegará pronto al App Store. Deja tu correo y te escribiremos una vez cuando empiece. Nada más.',
+        wlLabel: 'Correo electrónico',
+        wlConsent: 'Acepto que Vieni guarde mi correo para avisarme una vez del lanzamiento. Puedo darme de baja en cualquier momento por correo. <a href="datenschutz.html#warteliste">Privacidad</a>',
+        wlButton: 'Apuntarme', fTerms: 'Condiciones de uso', fPrivacy: 'Privacidad', fImprint: 'Aviso legal', fMade: 'Hecho en Weimar.',
+        ok: '¡Listo! Te avisaremos.', errEmail: 'Introduce un correo válido.', errConsent: 'Marca la casilla para aceptar.',
+        errNet: 'No ha funcionado. Inténtalo más tarde.', storeIos: 'Descargar en el App Store', storeAndroid: 'Disponible en Google Play'
+      }
+    };
+    var DE_EXTRA = {
+      ok: 'Geschafft! Wir sagen dir Bescheid.', errEmail: 'Bitte gib eine gültige E-Mail-Adresse ein.',
+      errConsent: 'Bitte setze den Haken, um zuzustimmen.', errNet: 'Das hat nicht geklappt. Versuch es später noch einmal.',
+      storeIos: 'Laden im App Store', storeAndroid: 'Jetzt bei Google Play'
+    };
+
+    // Deutsche Texte aus der Seite selbst übernehmen
+    var de = Object.assign({}, DE_EXTRA);
+    document.querySelectorAll('[data-t]').forEach(function (el) { de[el.dataset.t] = el.innerHTML; });
+    document.querySelectorAll('[data-t-html]').forEach(function (el) { de[el.dataset.tHtml] = el.innerHTML; });
+    T.de = de;
+
+    var lang;
+    function setLang(l) {
+      lang = T[l] ? l : 'de';
+      document.documentElement.lang = lang;
+      var d = T[lang];
+      document.querySelectorAll('[data-t]').forEach(function (el) { if (d[el.dataset.t]) el.innerHTML = d[el.dataset.t]; });
+      document.querySelectorAll('[data-t-html]').forEach(function (el) { if (d[el.dataset.tHtml]) el.innerHTML = d[el.dataset.tHtml]; });
+      document.querySelectorAll('[data-lang]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+      applyStores();
+      try { localStorage.setItem('vieni.lang', lang); } catch (e) {}
+    }
+    document.querySelectorAll('[data-lang]').forEach(function (b) {
+      b.addEventListener('click', function () { setLang(b.dataset.lang); });
+    });
+
+    // Gerät erkennen: passender Knopf zuerst
+    var ua = navigator.userAgent || '';
+    var isIOS = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    var isAndroid = /Android/.test(ua);
+    var C = window.VIENI || {};
+    var box = document.getElementById('downloads');
+    var bAndroid = document.getElementById('btn-android');
+    var bIos = document.getElementById('btn-ios');
+    if (isIOS) { box.insertBefore(bIos, bAndroid); bIos.className = 'btn btn-primary'; bAndroid.className = 'btn btn-light'; }
+
+    function applyStores() {
+      var d = T[lang];
+      bAndroid.href = C.playStore || C.androidApk || '#android-hilfe';
+      if (C.playStore) {
+        bAndroid.querySelector('[data-t="android"]').textContent = d.storeAndroid;
+        bAndroid.querySelector('small').style.display = 'none';
+        var help = document.getElementById('android-hilfe'); if (help) help.hidden = true;
+      }
+      if (C.appStore) {
+        bIos.href = C.appStore;
+        bIos.querySelector('[data-t="ios"]').textContent = d.storeIos;
+        bIos.querySelector('small').style.display = 'none';
+        var wl = document.getElementById('warteliste'); if (wl) wl.hidden = true;
+      }
+    }
+    // Nach dem Download die Anleitung aufklappen
+    bAndroid.addEventListener('click', function () {
+      if (C.playStore) return;
+      var det = document.querySelector('#android-hilfe details'); if (det) det.open = true;
+    });
+
+    var saved = null;
+    try { saved = localStorage.getItem('vieni.lang'); } catch (e) {}
+    var nav = (navigator.language || 'de').slice(0, 2).toLowerCase();
+    setLang(saved || (T[nav] ? nav : 'de'));
+
+    // Warteliste
+    var form = document.getElementById('wl-form');
+    var msg = document.getElementById('wl-msg');
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var d = T[lang];
+      var email = document.getElementById('wl-email').value.trim();
+      msg.className = 'msg err';
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { msg.textContent = d.errEmail; return; }
+      if (!document.getElementById('wl-consent').checked) { msg.textContent = d.errConsent; return; }
+      if (!C.supabaseUrl || !C.supabaseAnonKey) { msg.textContent = d.errNet; return; }
+      var btn = form.querySelector('button'); btn.disabled = true;
+      fetch(C.supabaseUrl.replace(/\/$/, '') + '/rest/v1/rpc/join_waitlist', {
+        method: 'POST',
+        // Neue Supabase-Schlüssel (sb_publishable_…) gehören nur in "apikey", alte (eyJ…) zusätzlich in Authorization
+        headers: Object.assign({ 'Content-Type': 'application/json', apikey: C.supabaseAnonKey },
+          /^eyJ/.test(C.supabaseAnonKey) ? { Authorization: 'Bearer ' + C.supabaseAnonKey } : {}),
+        body: JSON.stringify({ p_email: email, p_platform: isIOS ? 'ios' : isAndroid ? 'android' : 'other', p_language: lang })
+      }).then(function (r) {
+        if (!r.ok) throw new Error(String(r.status));
+        msg.className = 'msg ok'; msg.textContent = d.ok; form.reset();
+      }).catch(function () {
+        msg.textContent = d.errNet;
+      }).finally(function () { btn.disabled = false; });
+    });
+  })();
+  </script>
+</body>
+</html>
