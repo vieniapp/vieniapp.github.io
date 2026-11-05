@@ -138,8 +138,6 @@ details li { margin-bottom: 6px; }
 .partner .btn { display: inline-flex; min-height: 52px; font-size: 17px; }
 
 /* ---------- Fuß ---------- */
-.about { margin: 0 0 18px; color: var(--soft); }
-.about a { color: var(--blue); font-weight: 700; }
 footer { padding: 48px 0 40px; color: var(--soft); font-size: 14px; }
 footer nav { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-bottom: 10px; }
 footer a { color: var(--navy); font-weight: 700; text-decoration: none; }
