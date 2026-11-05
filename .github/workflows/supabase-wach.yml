@@ -1,0 +1,25 @@
+# Hält das kostenlose Supabase-Projekt wach (wird sonst nach 7 Tagen ohne Aktivität pausiert).
+# Läuft täglich um 6:17 UTC und kann unter "Actions" auch per Hand gestartet werden.
+name: Supabase wach halten
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Datenbank anpingen
+        run: |
+          URL=$(grep -oE "supabaseUrl: *'[^']+'" config.js | sed -E "s/.*'([^']+)'/\1/")
+          KEY=$(grep -oE "supabaseAnonKey: *'[^']+'" config.js | sed -E "s/.*'([^']+)'/\1/")
+          code=$(curl -s -o antwort.txt -w "%{http_code}" -X POST "$URL/rest/v1/rpc/keepalive" \
+            -H "apikey: $KEY" -H "Content-Type: application/json" -d '{}')
+          echo "Antwort ($code): $(cat antwort.txt)"
+          test "$code" = "200"
