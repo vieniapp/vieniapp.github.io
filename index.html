@@ -221,10 +221,13 @@
       document.querySelectorAll('[data-t-html]').forEach(function (el) { if (d[el.dataset.tHtml]) el.innerHTML = d[el.dataset.tHtml]; });
       document.querySelectorAll('[data-lang]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
       applyStores();
-      try { localStorage.setItem('vieni.lang', lang); } catch (e) {}
     }
     document.querySelectorAll('[data-lang]').forEach(function (b) {
-      b.addEventListener('click', function () { setLang(b.dataset.lang); });
+      b.addEventListener('click', function () {
+        setLang(b.dataset.lang);
+        // Nur speichern, wenn jemand selbst eine Sprache wählt (keine Speicherung ohne Zutun, § 25 TDDDG)
+        try { localStorage.setItem('vieni.lang', b.dataset.lang); } catch (e) {}
+      });
     });
 
     // Gerät erkennen: passender Knopf zuerst
