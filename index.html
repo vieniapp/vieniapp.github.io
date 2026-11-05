@@ -8,6 +8,16 @@
   <meta name="theme-color" content="#FFD23F">
   <meta property="og:title" content="Vieni – spontan treffen">
   <meta property="og:description" content="Triff jemanden, der gerade Zeit hat. In wenigen Minuten, an einem öffentlichen Ort.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vieniapp.github.io/">
+  <meta property="og:site_name" content="Vieni">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:image" content="https://vieniapp.github.io/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Vieni – Wer hat gerade Zeit? Spontan treffen in Weimar.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://vieniapp.github.io/">
   <link rel="icon" href="favicon.png">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -27,7 +37,7 @@
       </div>
 
       <h1 data-t="h1">Wer hat <em>gerade</em> Zeit?</h1>
-      <p class="lead" data-t="lead">Vieni bringt dich mit Studierenden in deiner Nähe zusammen, die genau jetzt Lust auf Kaffee, Lernen oder einen Spaziergang haben. Treffpunkt ist immer ein öffentlicher Ort.</p>
+      <p class="lead" data-t="lead">Vieni bringt dich mit Studierenden in deiner Nähe zusammen, die genau jetzt Lust auf Kaffee, Lernen oder einen Spaziergang haben. In 15 Minuten sitzt ihr zusammen, immer an einem öffentlichen Ort.</p>
 
       <div class="downloads" id="downloads">
         <a class="btn btn-primary" id="btn-android" href="#">
@@ -51,6 +61,11 @@
   </header>
 
   <main class="wrap">
+    <section id="screens" hidden>
+      <h2 data-t="screensTitle">So sieht Vieni aus</h2>
+      <div class="screens" id="screens-list"></div>
+    </section>
+
     <section>
       <h2 data-t="howTitle">So funktioniert's</h2>
       <ol class="steps">
@@ -84,6 +99,15 @@
       </details>
     </section>
 
+    <section id="partner">
+      <div class="partner">
+        <span class="emoji" aria-hidden="true">☕</span>
+        <h2 data-t="pTitle">Du hast ein Café oder Restaurant in Weimar?</h2>
+        <p data-t="pText">Vieni schlägt für jedes Treffen einen Ort vor. Partner werden bevorzugt vorgeschlagen und bekommen so Gäste, die sich gerade verabreden. In der Startphase ist das kostenlos.</p>
+        <a class="btn btn-dark" id="btn-partner" href="mailto:vieniapp.io@gmail.com?subject=Partner%20werden%20bei%20Vieni" data-t="pButton">Partner werden</a>
+      </div>
+    </section>
+
     <section id="warteliste">
       <div class="waitlist">
         <h2 data-t="wlTitle">iPhone? Wir sagen dir Bescheid.</h2>
@@ -101,6 +125,7 @@
   </main>
 
   <footer class="wrap">
+    <p class="about" data-t-html="about">Vieni wird von Matthias gebaut, Student in Weimar. Fragen oder Ideen? <a href="mailto:vieniapp.io@gmail.com">vieniapp.io@gmail.com</a></p>
     <nav>
       <a href="nutzungsbedingungen.html" data-t="fTerms">Nutzungsbedingungen</a>
       <a href="datenschutz.html" data-t="fPrivacy">Datenschutz</a>
@@ -114,7 +139,10 @@
     var T = {
       en: {
         h1: 'Who’s free <em>right now</em>?',
-        lead: 'Vieni connects you with students nearby who feel like grabbing a coffee, studying or going for a walk right now. You always meet at a public place.',
+        lead: 'Vieni connects you with students nearby who feel like grabbing a coffee, studying or going for a walk right now. Within 15 minutes you’re sitting together, always at a public place.',
+        screensTitle: 'What Vieni looks like',
+        pTitle: 'Own a café or restaurant in Weimar?', pText: 'Vieni suggests a place for every meetup. Partners are suggested first and get guests who are meeting up right now. Free during the launch phase.', pButton: 'Become a partner',
+        about: 'Vieni is built by Matthias, a student in Weimar. Questions or ideas? <a href="mailto:vieniapp.io@gmail.com">vieniapp.io@gmail.com</a>',
         android: 'Get it for Android', androidSub: 'free · direct app download',
         ios: 'iPhone: coming soon to the App Store', iosSub: 'sign up and we’ll let you know',
         area: 'Just launched in Weimar. 18+ only.',
@@ -142,7 +170,10 @@
       },
       es: {
         h1: '¿Quién tiene tiempo <em>ahora</em>?',
-        lead: 'Vieni te conecta con estudiantes cerca de ti que ahora mismo tienen ganas de un café, estudiar o dar un paseo. Siempre os encontráis en un lugar público.',
+        lead: 'Vieni te conecta con estudiantes cerca de ti que ahora mismo tienen ganas de un café, estudiar o dar un paseo. En 15 minutos estáis juntos, siempre en un lugar público.',
+        screensTitle: 'Así es Vieni',
+        pTitle: '¿Tienes un café o restaurante en Weimar?', pText: 'Vieni propone un lugar para cada encuentro. Los socios se proponen primero y reciben clientes que quedan justo ahora. Gratis durante el lanzamiento.', pButton: 'Hacerse socio',
+        about: 'Vieni lo crea Matthias, estudiante en Weimar. ¿Preguntas o ideas? <a href="mailto:vieniapp.io@gmail.com">vieniapp.io@gmail.com</a>',
         android: 'Descargar para Android', androidSub: 'gratis · descarga directa',
         ios: 'iPhone: pronto en el App Store', iosSub: 'apúntate y te avisamos',
         area: 'Recién lanzado en Weimar. Solo mayores de 18.',
@@ -221,6 +252,18 @@
         var wl = document.getElementById('warteliste'); if (wl) wl.hidden = true;
       }
     }
+    // App-Screenshots (Dateinamen in config.js unter screenshots eintragen)
+    var shots = (C.screenshots || []).filter(Boolean);
+    if (shots.length) {
+      var list = document.getElementById('screens-list');
+      shots.forEach(function (src, i) {
+        var f = document.createElement('figure'); f.className = 'phone';
+        var img = document.createElement('img'); img.src = src; img.alt = 'Vieni Screenshot ' + (i + 1); img.loading = 'lazy'; img.width = 390; img.height = 844;
+        f.appendChild(img); list.appendChild(f);
+      });
+      document.getElementById('screens').hidden = false;
+    }
+
     // Nach dem Download die Anleitung aufklappen
     bAndroid.addEventListener('click', function () {
       if (C.playStore) return;

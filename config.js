@@ -9,6 +9,10 @@ window.VIENI = {
   appStore: '',
   playStore: '',
 
+  // App-Screenshots: Bilder in den Ordner "screens" hochladen und hier eintragen,
+  // z. B. ['screens/1.png', 'screens/2.png', 'screens/3.png']. Leer = Abschnitt bleibt versteckt.
+  screenshots: [],
+
   // Für die Warteliste: dieselben Werte wie EXPO_PUBLIC_SUPABASE_URL und _ANON_KEY in .env.
   // Der anon key ist öffentlich und darf hier stehen; die Datenbank erlaubt damit nur das Eintragen.
   supabaseUrl: 'https://hfqyhwkivhmvniwnaypp.supabase.co',
