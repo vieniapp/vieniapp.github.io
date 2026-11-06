@@ -25,8 +25,5 @@ jobs:
             -H "apikey: $KEY" -H "Content-Type: application/json" -d "{\"p_key\":\"$KPI_KEY\"}")
           echo "Antwort: $code"
           test "$code" = "200"
-      - uses: actions/upload-artifact@v4
-        with:
-          name: kennzahlen
-          path: kennzahlen.json
-          retention-days: 7
+          # Eine Zeile mit den Summen, die das Büro aus dem Protokoll liest
+          echo "KENNZAHLEN=$(tr -d '\n' < kennzahlen.json)"
