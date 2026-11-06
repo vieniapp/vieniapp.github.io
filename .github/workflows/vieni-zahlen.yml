@@ -1,0 +1,32 @@
+# Holt einmal am Tag die Vieni-Kennzahlen (nur Summen) für das Hebelwerk-Büro.
+# Braucht das Repository-Secret KPI_KEY (derselbe Schlüssel wie in 0012_kennzahlen.sql).
+name: Vieni Kennzahlen
+
+on:
+  schedule:
+    - cron: "43 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  zahlen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Kennzahlen abrufen
+        env:
+          KPI_KEY: ${{ secrets.KPI_KEY }}
+        run: |
+          URL=$(grep -oE "supabaseUrl: *'[^']+'" config.js | sed -E "s/.*'([^']+)'/\1/")
+          KEY=$(grep -oE "supabaseAnonKey: *'[^']+'" config.js | sed -E "s/.*'([^']+)'/\1/")
+          code=$(curl -s -o kennzahlen.json -w "%{http_code}" -X POST "$URL/rest/v1/rpc/vieni_kennzahlen" \
+            -H "apikey: $KEY" -H "Content-Type: application/json" -d "{\"p_key\":\"$KPI_KEY\"}")
+          echo "Antwort: $code"
+          test "$code" = "200"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kennzahlen
+          path: kennzahlen.json
+          retention-days: 7
